@@ -5,5 +5,8 @@
 
     <bean id="bookDao" class="com.learn.dao.impl.BookDaoImpl"/>
 
-    <bean id="bookService" class="com.learn.service.impl.BookServiceImpl"/>
+    <bean id="bookService" class="com.learn.service.impl.BookServiceImpl">
+        <!-- property标签用于给对象的属性赋值，name表示要赋值的属性名称，ref表示被引用的bean -->
+        <property name="bookDao" ref="bookDao"/>
+    </bean>
 </beans>
