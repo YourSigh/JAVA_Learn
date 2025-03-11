@@ -1,13 +1,13 @@
 package com.learn;
 
-/**
- * Hello world!
- *
- */
-public class App 
+import com.learn.service.BookService;
+import com.learn.service.impl.BookServiceImpl;
+
+public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        BookService bookService = new BookServiceImpl();
+        bookService.save();
     }
 }
