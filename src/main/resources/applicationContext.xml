@@ -4,7 +4,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--  scope设置是否开启单例，默认为单例  -->
-    <bean id="bookDao" class="com.learn.dao.impl.BookDaoImpl" scope="prototype"/>
+    <bean id="bookDao" class="com.learn.dao.impl.BookDaoImpl" scope="prototype">
+        <property name="dataBaseName" value="mysql数据库"/>
+        <property name="totalCount" value="10000"/>
+    </bean>
 
     <bean id="bookService" class="com.learn.service.impl.BookServiceImpl">
         <!-- property标签用于给对象的属性赋值，name表示要赋值的属性名称，ref表示被引用的bean -->
