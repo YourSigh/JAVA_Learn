@@ -1,7 +1,11 @@
 package com.learn.dao.impl;
 
 import com.learn.dao.BookDao;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
+//@Component("bookDao")
+@Repository("bookDao")
 public class BookDaoImpl implements BookDao{
     private String dataBaseName;
     private String totalCount;
