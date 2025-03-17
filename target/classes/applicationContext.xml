@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+">
 
     <!--  scope设置是否开启单例，默认为单例  -->
     <bean id="bookDao" class="com.learn.dao.impl.BookDaoImpl" scope="prototype">
@@ -19,17 +25,20 @@
 
 <!--    <bean id="userDao" factory-bean="userFactory" factory-method="getUserDao"/>-->
     <bean id="userDao" class="com.learn.factory.UserDaoFactoryBean"/>
-    <bean class="com.alibaba.druid.pool.DruidDataSource">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="https://yoursigh.top:3306"/>
-        <property name="username" value="music"/>
-        <property name="password" value="1325285734lj"/>
+
+    <context:property-placeholder location="jdbc"/>
+
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
     </bean>
 
-    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
-        <property name="jdbcUrl" value="https://yoursigh.top:3306"/>
-        <property name="user" value="music"/>
-        <property name="password" value="1325285734lj"/>
-    </bean>
+<!--    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">-->
+<!--        <property name="driverClass" value="com.mysql.jdbc.Driver"/>-->
+<!--        <property name="jdbcUrl" value="https://yoursigh.top:3306"/>-->
+<!--        <property name="user" value="music"/>-->
+<!--        <property name="password" value="1325285734lj"/>-->
+<!--    </bean>-->
 </beans>

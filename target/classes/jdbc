@@ -1,0 +1,4 @@
+jdbc.driver=com.mysql.cj.jdbc.Driver
+jdbc.url=https://yoursigh.top:3306/music
+jdbc.username=music
+jdbc.password=1325285734lj
