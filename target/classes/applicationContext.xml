@@ -19,4 +19,17 @@
 
 <!--    <bean id="userDao" factory-bean="userFactory" factory-method="getUserDao"/>-->
     <bean id="userDao" class="com.learn.factory.UserDaoFactoryBean"/>
+    <bean  class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="https://yoursigh.top:3306"/>
+        <property name="username" value="music"/>
+        <property name="password" value="1325285734lj"/>
+    </bean>
+
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+        <property name="jdbcUrl" value="https://yoursigh.top:3306"/>
+        <property name="user" value="music"/>
+        <property name="password" value="1325285734lj"/>
+    </bean>
 </beans>
