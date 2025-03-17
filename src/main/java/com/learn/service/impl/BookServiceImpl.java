@@ -5,7 +5,9 @@ import com.learn.dao.impl.BookDaoImpl;
 import com.learn.service.BookService;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.stereotype.Service;
 
+@Service("bookService")
 public class BookServiceImpl implements BookService, InitializingBean, DisposableBean {
     private BookDao bookDao;
 
