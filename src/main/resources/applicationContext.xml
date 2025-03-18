@@ -14,27 +14,27 @@
 <!--        <property name="dataBaseName" value="mysql数据库"/>-->
 <!--        <property name="totalCount" value="10000"/>-->
 <!--    </bean>-->
-    <context:component-scan base-package="com.learn"/>
+<!--    <context:component-scan base-package="com.learn"/>-->
 
-    <bean id="bookService" class="com.learn.service.impl.BookServiceImpl">
-        <!-- property标签用于给对象的属性赋值，name表示要赋值的属性名称，ref表示被引用的bean -->
-<!--        <property name="bookDao" ref="bookDao"/>-->
-        <constructor-arg name="bookDao" ref="bookDao"/>
-    </bean>
+<!--    <bean id="bookService" class="com.learn.service.impl.BookServiceImpl">-->
+<!--        &lt;!&ndash; property标签用于给对象的属性赋值，name表示要赋值的属性名称，ref表示被引用的bean &ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="bookDao" ref="bookDao"/>&ndash;&gt;-->
+<!--        <constructor-arg name="bookDao" ref="bookDao"/>-->
+<!--    </bean>-->
 
 <!--    <bean id="userFactory" class="com.learn.factory.UserDaoFactory" />-->
 
 <!--    <bean id="userDao" factory-bean="userFactory" factory-method="getUserDao"/>-->
-    <bean id="userDao" class="com.learn.factory.UserDaoFactoryBean"/>
+<!--    <bean id="userDao" class="com.learn.factory.UserDaoFactoryBean"/>-->
 
-    <context:property-placeholder location="classpath*:*.properties" system-properties-mode="NEVER"/>
+<!--    <context:property-placeholder location="classpath*:*.properties" system-properties-mode="NEVER"/>-->
 
-    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
-        <property name="driverClassName" value="${jdbc.driver}"/>
-        <property name="url" value="${jdbc.url}"/>
-        <property name="username" value="${jdbc.username}"/>
-        <property name="password" value="${jdbc.password}"/>
-    </bean>
+<!--    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">-->
+<!--        <property name="driverClassName" value="${jdbc.driver}"/>-->
+<!--        <property name="url" value="${jdbc.url}"/>-->
+<!--        <property name="username" value="${jdbc.username}"/>-->
+<!--        <property name="password" value="${jdbc.password}"/>-->
+<!--    </bean>-->
 
 <!--    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">-->
 <!--        <property name="driverClass" value="com.mysql.jdbc.Driver"/>-->

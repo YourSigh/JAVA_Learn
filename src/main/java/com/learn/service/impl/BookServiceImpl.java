@@ -5,32 +5,35 @@ import com.learn.dao.impl.BookDaoImpl;
 import com.learn.service.BookService;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service("bookService")
-public class BookServiceImpl implements BookService, InitializingBean, DisposableBean {
+public class BookServiceImpl implements BookService {
+    @Autowired
     private BookDao bookDao;
 
-    public BookServiceImpl(BookDaoImpl bookDao) {
-        this.bookDao = bookDao;
-    }
+//    public BookServiceImpl(BookDaoImpl bookDao) {
+//        this.bookDao = bookDao;
+//    }
 
     public void save() {
         System.out.println("BookServiceImpl save...");
         bookDao.save();
     }
 
+//    @Autowired
     public void setBookDao(BookDao bookDao) {
         this.bookDao = bookDao;
     }
 
-    @Override
-    public void destroy() throws Exception {
-        System.out.println("BookServiceImpl destroy...");
-    }
-
-    @Override
-    public void afterPropertiesSet() throws Exception {
-       System.out.println("BookServiceImpl init...");
-    }
+//    @Override
+//    public void destroy() throws Exception {
+//        System.out.println("BookServiceImpl destroy...");
+//    }
+//
+//    @Override
+//    public void afterPropertiesSet() throws Exception {
+//       System.out.println("BookServiceImpl init...");
+//    }
 }
