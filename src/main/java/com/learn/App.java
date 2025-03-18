@@ -20,5 +20,7 @@ public class App
         BookService bookService = (BookService) ctx.getBean("bookService");
         bookService.save();
         System.out.println(bookService);
+        DataSource dataSource = ctx.getBean(DataSource.class);
+        System.out.println(dataSource);
     }
 }
