@@ -6,19 +6,22 @@ import com.learn.service.BookService;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service("bookService")
 public class BookServiceImpl implements BookService {
     @Autowired
     private BookDao bookDao;
+    @Value("${jdbc.username}")
+    private String name;
 
 //    public BookServiceImpl(BookDaoImpl bookDao) {
 //        this.bookDao = bookDao;
 //    }
 
     public void save() {
-        System.out.println("BookServiceImpl save...");
+        System.out.println("BookServiceImpl save..." + name);
         bookDao.save();
     }
 
