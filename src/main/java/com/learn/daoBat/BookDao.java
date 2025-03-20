@@ -1,4 +1,4 @@
-package com.learn.dao;
+package com.learn.daoBat;
 
 public interface BookDao {
     void save();

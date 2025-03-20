@@ -1,7 +1,7 @@
 package com.learn.factory;
 
-import com.learn.dao.UserDao;
-import com.learn.dao.impl.UserDaoImpl;
+import com.learn.daoBat.UserDao;
+import com.learn.daoBat.impl.UserDaoImpl;
 import org.springframework.beans.factory.FactoryBean;
 
 public class UserDaoFactoryBean implements FactoryBean<UserDao> {

@@ -1,6 +1,6 @@
-package com.learn.dao.impl;
+package com.learn.daoBat.impl;
 
-import com.learn.dao.UserDao;
+import com.learn.daoBat.UserDao;
 
 public class UserDaoImpl implements UserDao {
     public void save() {

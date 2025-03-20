@@ -1,7 +1,6 @@
-package com.learn.dao.impl;
+package com.learn.daoBat.impl;
 
-import com.learn.dao.BookDao;
-import org.springframework.stereotype.Component;
+import com.learn.daoBat.BookDao;
 import org.springframework.stereotype.Repository;
 
 //@Component("bookDao")

@@ -8,6 +8,6 @@ import javax.sql.DataSource;
 @Configuration
 @ComponentScan("com.learn")
 @PropertySource("jdbc.properties")
-@Import({JdbcConfig.class})
+@Import({JdbcConfig.class, MybatisConfig.class})
 public class SpringConfig {
 }

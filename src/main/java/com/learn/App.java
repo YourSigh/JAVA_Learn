@@ -2,6 +2,8 @@ package com.learn;
 
 import com.learn.config.SpringConfig;
 import com.learn.service.BookService;
+import com.learn.service.UsersService;
+import com.learn.service.impl.UsersServiceImpl;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Configuration;
@@ -17,10 +19,12 @@ public class App
     {
 //        ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
         ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringConfig.class);
-        BookService bookService = (BookService) ctx.getBean("bookService");
-        bookService.save();
-        System.out.println(bookService);
-        DataSource dataSource = ctx.getBean(DataSource.class);
-        System.out.println(dataSource);
+//        BookService bookService = (BookService) ctx.getBean("bookService");
+//        bookService.save();
+//        System.out.println(bookService);
+//        DataSource dataSource = ctx.getBean(DataSource.class);
+//        System.out.println(dataSource);
+        UsersService usersService = (UsersService) ctx.getBean("usersService");
+        System.out.println(usersService.findAll());
     }
 }

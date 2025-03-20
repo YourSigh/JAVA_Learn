@@ -10,7 +10,7 @@
 ">
 
     <!--  scope设置是否开启单例，默认为单例  -->
-<!--    <bean id="bookDao" class="com.learn.dao.impl.BookDaoImpl" scope="prototype">-->
+<!--    <bean id="bookDao" class="com.learn.daoBat.impl.BookDaoImpl" scope="prototype">-->
 <!--        <property name="dataBaseName" value="mysql数据库"/>-->
 <!--        <property name="totalCount" value="10000"/>-->
 <!--    </bean>-->
