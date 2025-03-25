@@ -32,4 +32,8 @@ public class UsersServiceImpl implements UsersService {
     public List<Users> findAll() {
         return usersDao.findAll();
     }
+
+    public void test() {
+        System.out.println("test");
+    }
 }

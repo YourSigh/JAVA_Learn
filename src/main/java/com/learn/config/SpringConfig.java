@@ -9,5 +9,6 @@ import javax.sql.DataSource;
 @ComponentScan("com.learn")
 @PropertySource("jdbc.properties")
 @Import({JdbcConfig.class, MybatisConfig.class})
+@EnableAspectJAutoProxy
 public class SpringConfig {
 }

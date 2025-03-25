@@ -13,10 +13,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import javax.sql.DataSource;
 
 @Configuration
-public class App
-{
-    public static void main( String[] args )
-    {
+public class App {
+    public static void main( String[] args ) {
 //        ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
         ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringConfig.class);
 //        BookService bookService = (BookService) ctx.getBean("bookService");
@@ -26,5 +24,6 @@ public class App
 //        System.out.println(dataSource);
         UsersService usersService = (UsersService) ctx.getBean("usersService");
         System.out.println(usersService.findAll());
+        usersService.test();
     }
 }

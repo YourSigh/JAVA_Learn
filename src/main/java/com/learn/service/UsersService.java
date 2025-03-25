@@ -10,4 +10,5 @@ public interface UsersService {
     Users findById(Integer id);
     void update(String name, String pwd, Integer id);
     void delete(Integer id);
+    void test();
 }
