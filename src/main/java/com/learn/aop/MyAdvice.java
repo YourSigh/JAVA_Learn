@@ -51,7 +51,7 @@ public class MyAdvice {
             res = joinPoint.proceed();
         }
         long end = System.currentTimeMillis();
-        System.out.println("万次执行" + (end - start) + "ms");
+        System.out.println("万次执行" + joinPoint.getSignature().getDeclaringTypeName() + "的" + joinPoint.getSignature().getName() + "方法需要" + (end - start) + "ms");
         return res;
     }
 }

@@ -24,6 +24,6 @@ public class App {
 //        System.out.println(dataSource);
         UsersService usersService = (UsersService) ctx.getBean("usersService");
         System.out.println(usersService.findAll());
-//        usersService.test();
+        usersService.test();
     }
 }
