@@ -33,7 +33,7 @@ public class UsersServiceImpl implements UsersService {
         return usersDao.findAll();
     }
 
-    public void test() {
+    public void test(int t) {
         System.out.println("test");
     }
 }

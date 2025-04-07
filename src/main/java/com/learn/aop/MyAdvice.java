@@ -1,21 +1,26 @@
 package com.learn.aop;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
+
+import java.util.Arrays;
 
 @Component
 @Aspect
 public class MyAdvice {
 
-    @Pointcut("execution(void com.learn.service.impl.UsersServiceImpl.test())")
+    @Pointcut("execution(void com.learn.service.impl.UsersServiceImpl.test(..))")
 //    @Pointcut("execution(* *..*(..))")
     private void pt() {}
 
-//    @Before("pt()")
-//    public void logBefore() {
-//        System.out.println("Before advice running....");
-//    }
+    @Before("pt()")
+    public void logBefore(JoinPoint jp) {
+        Object[] args = jp.getArgs();
+        System.out.println(Arrays.toString(args));
+        System.out.println("Before advice running....");
+    }
 
 //    @After("pt()")
 //    public void logAfter() {
@@ -43,7 +48,7 @@ public class MyAdvice {
     @Pointcut("execution(* com.learn.service..*(..))")
     private void servicePt() {};
 
-    @Around("servicePt()")
+//    @Around("servicePt()")
     public Object time(ProceedingJoinPoint joinPoint) throws Throwable {
         long start = System.currentTimeMillis();
         Object res = null;
