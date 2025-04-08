@@ -1,6 +1,7 @@
 package com.learn;
 
 import com.learn.config.SpringConfig;
+import com.learn.service.BaiduService;
 import com.learn.service.BookService;
 import com.learn.service.UsersService;
 import com.learn.service.impl.UsersServiceImpl;
@@ -22,8 +23,10 @@ public class App {
 //        System.out.println(bookService);
 //        DataSource dataSource = ctx.getBean(DataSource.class);
 //        System.out.println(dataSource);
-        UsersService usersService = (UsersService) ctx.getBean("usersService");
-        System.out.println(usersService.findAll());
-        usersService.test(100);
+//        UsersService usersService = (UsersService) ctx.getBean("usersService");
+//        System.out.println(usersService.findAll());
+//        usersService.test(100);
+        BaiduService baiduService = (BaiduService) ctx.getBean("BaiduService");
+        System.out.println(baiduService.login("123", "root     "));
     }
 }
