@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-
+@Repository
 public interface UsersDao {
     @Insert("insert into user(name, pwd) values (#{name}, #{pwd})})")
     void save(Users users);

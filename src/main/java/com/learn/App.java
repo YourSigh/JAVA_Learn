@@ -1,6 +1,7 @@
 package com.learn;
 
 import com.learn.config.SpringConfig;
+import com.learn.service.AccountService;
 import com.learn.service.BaiduService;
 import com.learn.service.BookService;
 import com.learn.service.UsersService;
@@ -26,7 +27,9 @@ public class App {
 //        UsersService usersService = (UsersService) ctx.getBean("usersService");
 //        System.out.println(usersService.findAll());
 //        usersService.test(100);
-        BaiduService baiduService = (BaiduService) ctx.getBean("BaiduService");
-        System.out.println(baiduService.login("123", "root     "));
+//        BaiduService baiduService = (BaiduService) ctx.getBean("BaiduService");
+//        System.out.println(baiduService.login("123", "root     "));
+        AccountService accountService = (AccountService) ctx.getBean("AccountService");
+        accountService.transfer("盘蠢驴", "屌丝哥", 100);
     }
 }
