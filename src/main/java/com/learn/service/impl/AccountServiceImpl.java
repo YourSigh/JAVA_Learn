@@ -20,7 +20,7 @@ public class AccountServiceImpl implements AccountService {
     public void transfer(String out, String in, double money) {
         try {
             accountDao.outMoney(out,money);
-            int i = 1/ 0;
+//            int i = 1/ 0;
             accountDao.inMoney(in,money);
         } finally {
             logService.log(out, in, money);
