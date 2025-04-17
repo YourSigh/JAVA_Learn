@@ -3,6 +3,7 @@ com/learn/service/BaiduService.class
 com/learn/controller/UserController.class
 com/learn/dao/AccountDao.class
 com/learn/util/ResponseResult.class
+com/learn/config/ServletConfig.class
 com/learn/daoBat/UserDao.class
 com/learn/config/JdbcConfig.class
 com/learn/service/impl/AccountServiceImpl.class
@@ -28,6 +29,7 @@ com/learn/aop/BaiduAdvice.class
 com/learn/factory/UserDaoFactoryBean.class
 com/learn/service/impl/UsersServiceImpl.class
 com/learn/service/AccountService.class
+com/learn/controller/TestController.class
 com/learn/dao/LogDao.class
 com/learn/Test.class
 com/learn/service/impl/LogServiceImpl.class

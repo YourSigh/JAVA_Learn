@@ -8,7 +8,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @ComponentScan("com.learn")
-@PropertySource("jdbc.properties")
+@PropertySource("classpath:jdbc.properties")
 @Import({JdbcConfig.class, MybatisConfig.class})
 @EnableAspectJAutoProxy
 @EnableTransactionManagement

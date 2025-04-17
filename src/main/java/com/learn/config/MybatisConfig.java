@@ -2,20 +2,31 @@ package com.learn.config;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.annotation.MapperScan;
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.sql.DataSource;
 
+@Configuration
+@MapperScan("com.learn.dao")
 public class MybatisConfig {
     @Bean
-    public SqlSessionFactoryBean sqlSessionFactory(DataSource dataSource) {
-        SqlSessionFactoryBean sessionFactoryBean = new SqlSessionFactoryBean();
-        sessionFactoryBean.setTypeAliasesPackage("com.learn.domain");
-        sessionFactoryBean.setDataSource(dataSource);
-        return sessionFactoryBean;
+    public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
+        SqlSessionFactoryBean factory = new SqlSessionFactoryBean();
+        factory.setDataSource(dataSource);
+        factory.setTypeAliasesPackage("com.learn.domain"); // 实体类包
+
+        // 关键配置：指定XML文件路径（支持Ant风格通配符）
+        factory.setMapperLocations(
+                new PathMatchingResourcePatternResolver()
+                        .getResources("classpath*:mapper/**/*.xml")
+        );
+        return factory.getObject();
     }
 
     @Bean
