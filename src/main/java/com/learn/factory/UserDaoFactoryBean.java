@@ -15,4 +15,9 @@ public class UserDaoFactoryBean implements FactoryBean<UserDao> {
     public Class<?> getObjectType() {
         return UserDao.class;
     }
+
+    @Override
+    public boolean isSingleton() {
+        return false;
+    }
 }

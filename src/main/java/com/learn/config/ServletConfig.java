@@ -13,7 +13,6 @@ public class ServletConfig extends AbstractDispatcherServletInitializer {
         return context;
     }
 
-    // 设置哪些归springMVC
     @Override
     protected String[] getServletMappings() {
         return new String[]{"/"};
