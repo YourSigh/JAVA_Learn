@@ -29,17 +29,17 @@ public class MybatisConfig {
         return factory.getObject();
     }
 
-    @Bean
-    public MapperScannerConfigurer mapperScannerConfigurer() {
-        MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();
-        mapperScannerConfigurer.setBasePackage("com.learn.dao");
-        return mapperScannerConfigurer;
-    }
-
-    @Bean
-    public PlatformTransactionManager transactionManager(DataSource dataSource) {
-        DataSourceTransactionManager transactionManager = new DataSourceTransactionManager();
-        transactionManager.setDataSource(dataSource);
-        return transactionManager;
-    }
+//    @Bean
+//    public MapperScannerConfigurer mapperScannerConfigurer() {
+//        MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();
+//        mapperScannerConfigurer.setBasePackage("com.learn.dao");
+//        return mapperScannerConfigurer;
+//    }
+//
+//    @Bean
+//    public PlatformTransactionManager transactionManager(DataSource dataSource) {
+//        DataSourceTransactionManager transactionManager = new DataSourceTransactionManager();
+//        transactionManager.setDataSource(dataSource);
+//        return transactionManager;
+//    }
 }

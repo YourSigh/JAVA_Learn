@@ -9,6 +9,14 @@ public class ServletConfig extends AbstractDispatcherServletInitializer {
     @Override
     protected WebApplicationContext createServletApplicationContext() {
         AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
+        context.register(SpringMvcConfig.class);
+        return context;
+    }
+
+    // 加载spring容器配置
+    @Override
+    protected WebApplicationContext createRootApplicationContext() {
+        AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
         context.register(SpringConfig.class);
         return context;
     }
@@ -16,11 +24,5 @@ public class ServletConfig extends AbstractDispatcherServletInitializer {
     @Override
     protected String[] getServletMappings() {
         return new String[]{"/"};
-    }
-
-    // 加载spring容器配置
-    @Override
-    protected WebApplicationContext createRootApplicationContext() {
-        return null;
     }
 }

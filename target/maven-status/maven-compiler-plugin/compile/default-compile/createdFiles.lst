@@ -7,6 +7,7 @@ com/learn/config/ServletConfig.class
 com/learn/daoBat/UserDao.class
 com/learn/config/JdbcConfig.class
 com/learn/service/impl/AccountServiceImpl.class
+com/learn/config/SpringMvcConfig.class
 com/learn/factory/UserDaoFactory.class
 com/learn/service/UsersService.class
 com/learn/dao/UserMapper.class

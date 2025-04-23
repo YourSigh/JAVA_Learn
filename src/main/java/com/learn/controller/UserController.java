@@ -20,7 +20,7 @@ public class UserController {
     public ResponseResult<User> login(
             @RequestParam("username") String name,
             @RequestParam("pwd") String password) {
-        System.out.println("登录！");
+        System.out.println("登录！" + name + ":" + password);
         return userService.login(name, password);
     }
 }
