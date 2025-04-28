@@ -36,4 +36,8 @@ public class User {
     public void setPwd(String pwd) {
         this.pwd = pwd;
     }
+
+    public String toString() {
+        return "User [id=" + id + ", username=" + username + ", pwd=" + pwd + "]";
+    }
 }
