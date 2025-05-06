@@ -35,4 +35,14 @@ public class TestController {
         System.out.println(date.toString());
         return "{message:'dateTest'}";
     }
+
+    @RequestMapping("/jsonResult")
+    @ResponseBody
+    public User jsonResult(){
+        User user = new User();
+        user.setUsername("张三");
+        user.setId(1);
+        user.setPwd("123");
+        return user;
+    }
 }
